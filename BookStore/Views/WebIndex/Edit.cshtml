@@ -1,0 +1,87 @@
+﻿
+@model BookStore.Models.Products
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <style>
+        input {
+            margin-top: 1%;
+        }
+
+        form {
+            margin-left: 40%;
+        }
+    </style>
+    <link href="../../Content/css/global.css" rel="stylesheet" />
+    <link href="../../Content/css/layout.css" rel="stylesheet" />
+    <link href="../../Content/css/template.css" rel="stylesheet" />
+</head>
+<body>
+    <header id="header">
+        <div class="header_top">
+            <div class="header_top_left">您好！欢迎光临武百网 [@Html.ActionLink("登录", "Login") | @Html.ActionLink("免费注册", "Register")]</div>
+            <div class="header_top_right">
+                <ul>
+                    <li><a href="#" target="_self">客户服务</a></li>
+                    <li>|</li>
+                    <li id="menu">
+                        <a href="#" target="_self">新手入门</a> <img src="../../Content/images/arrow_down.gif" alt="arrow" />
+                        <div id="dd_menu_top_down">
+                            <a href="#" target="_self">购物保障</a><br />
+                            <a href="#" target="_self">购物流程</a><br />
+                            <a href="#" target="_self">会员介绍</a><br />
+                            <a href="#" target="_self">常见问题</a><br />
+                        </div>
+                    </li>
+                    <li>|</li>
+                    <li><a href="#" target="_self">礼品卡</a></li>
+                    <li>|</li>
+                    <li><a href="#" target="_self">我的订单</a></li>
+                    <li>|</li>
+                    <li><a href="#" target="_self">我的账户</a></li>
+                    <li>|</li>
+                    <li> @Html.ActionLink("购物车", "Shopping")</li>
+                    <li><img src="../../Content/images/header_shop.gif" alt="shopping" /></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="header_middle">
+        <div class="logo"><img src="../../Content/images/logo.png" alt="logo" /></div>
+        <div class="search"><input type="text" placeholder="请输入搜索关键字"><input type="button"></div>
+    </div>
+    <nav id="nav">
+        <ul>
+            <li><a href="#"> 全部商品分类</a></li>
+            <li><a href="#"> 首页</a></li>
+            <li><a href="#"> 图书</a></li>
+            <li><a href="#"> 特价</a></li>
+            <li><a href="#"> 团购</a></li>
+        </ul>
+    </nav>
+    <form id="form1" method="post">
+        <input type="hidden" value="@Model.pid" name="pid" />
+        书名:<input type="text" name="pname" value="@Model.pname" /><br />
+        单价:<input type="text" name="price" value="@Model.price" /><br />
+        路径:<input type="text" name="imgurl" value="@Model.imgurl" /><br />
+        简介:<input type="text" name="pdesc" value="@Model.pdesc" /><br />
+        销量:<input type="text" name="pcount" value="@Model.pcount" /><br /> 
+        时间:<input type="text" name="pdate" value="@Model.pdate" /><br />
+        <a style="visibility:hidden"></a><br />
+        分类:@Html.DropDownList("Cid","请选择")<br />
+        <input type="submit" value="修改" style="width:100px" />
+
+
+    </form>
+    <footer id="footer">
+        <div class="footer_top"><a href="#" target="_parent" class="footer_dull_red">正版保障</a> | <a href="#" target="_parent" class="footer_dull_red">满额免运</a> | <a href="#" target="_parent" class="footer_dull_red">货到付款</a> | <a href="#" target="_parent" class="footer_dull_red">品种最全</a> | <a href="#" target="_parent" class="footer_dull_red">免费退换</a></div>
+        <div class="footer_end">Copyright (C) 武百网 2006-2016, All Rights Reserved  <img src="../../Content/images/validate.gif" alt="版权" style="vertical-align:middle;" /> 京PPP证100488号 出版物经营许可证 京批100160号</div>
+    </footer>
+    <script src="../../Content/js/jquery-1.12.4.js"></script>
+    <script src="../../Content/js/index.js"></script>
+    <script src="../../Content/js/header.js"></script>
+</body>
+</html>
